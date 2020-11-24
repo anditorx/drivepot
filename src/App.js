@@ -1,16 +1,23 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {Splash} from './pages';
+import {Login, Splash} from './pages';
+import {colors} from './utils';
+import {NavigationContainer} from '@react-navigation/native';
+import Router from './router';
 
 const App = () => {
-  return <Splash />;
+  return (
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
+  );
 };
 
 export default App;
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -19,6 +26,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '800',
     marginTop: 20,
-    color: 'black',
+    color: colors.black,
   },
 });

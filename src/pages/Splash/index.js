@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Ic_logo} from '../../assets';
 
-const Splash = () => {
+const Splash = ({navigation}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('Login');
+    }, 2000);
+  }, []);
+
   return (
     <View style={styles.page}>
       <Ic_logo />
