@@ -38,7 +38,11 @@ const Home = ({navigation}) => {
           </View>
         </View>
         <View style={styles.wrapperBtn}>
-          <Button title="ORDER" type="secondary" />
+          <Button
+            title="ORDER"
+            type="secondary"
+            onPress={() => navigation.replace('UserOrder')}
+          />
         </View>
       </View>
     </View>

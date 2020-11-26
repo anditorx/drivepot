@@ -18,25 +18,10 @@ const windowHeight = Dimensions.get('window').height;
 
 const Login = ({navigation}) => {
   const renderContent = () => (
-    <View
-      style={{
-        backgroundColor: 'white',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        height: 350,
-      }}>
-      <View
-        style={{
-          height: 3,
-          width: '50%',
-          backgroundColor: colors.primary,
-          alignSelf: 'center',
-          borderRadius: 20,
-        }}></View>
+    <View style={styles.wrapperRenderContent}>
+      <View style={styles.separatorSwipe}></View>
       <Gap height={8} />
-      <Text style={{textAlign: 'center', fontSize: 18, fontWeight: '600'}}>
-        Login with your account
-      </Text>
+      <Text style={styles.titleFormLogin}>Login with your account</Text>
       <Gap height={30} />
       <Input label="Email" placeholder="Enter your email" />
       <Gap height={10} />
@@ -57,7 +42,7 @@ const Login = ({navigation}) => {
           resizeMode: 'cover',
         }}>
         <View>
-          <Text style={styles.titlePage}>Login</Text>
+          <Text style={styles.titlePage}>LOGIN</Text>
         </View>
       </ImageBackground>
       <BottomSheet
@@ -87,4 +72,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 30,
   },
+  wrapperRenderContent: {
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    height: 350,
+  },
+  separatorSwipe: {
+    height: 3,
+    width: '40%',
+    backgroundColor: colors.primary,
+    alignSelf: 'center',
+    borderRadius: 20,
+  },
+  titleFormLogin: {textAlign: 'center', fontSize: 18, fontWeight: '600'},
 });

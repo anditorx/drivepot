@@ -1,6 +1,6 @@
 import Button from './Button';
 import Gap from './Gap';
-import Header from './Header';
 import Input from './Input';
+import Separator from './Separator';
 
-export {Button, Gap, Header, Input};
+export {Button, Gap, Input, Separator};

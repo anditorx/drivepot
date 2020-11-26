@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import {colors} from '../../../utils/colors';
 
 const Input = ({
@@ -26,11 +33,24 @@ const Input = ({
   const onBlurFrom = () => {
     setBorder(colors.greyLight);
   };
+  const [date, setDate] = useState('');
+
+  if (type === 'date-picker') {
+    return (
+      <View>
+        <Text style={styles.label(border)}>{label}</Text>
+        <TouchableOpacity style={styles.wrapperDate} onPress={onPress}>
+          <Image source={icon} style={styles.iconDate} />
+          <Text style={styles.txtDate}>{text}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   if (type === 'textarea') {
     return (
       <View>
-        <Text style={styles.label(border)}>{label}</Text>
+        <Text style={styles.input(border)}>{label}</Text>
         <TextInput
           onFocus={onFocusForm}
           style={styles.textarea(border)}
@@ -89,4 +109,24 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     textAlignVertical: 'top',
   }),
+  wrapperDate: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.greyLight,
+    borderRadius: 10,
+    padding: 12,
+  },
+  iconDate: {
+    alignSelf: 'flex-start',
+    justifyContent: 'flex-start',
+    padding: 10,
+    marginLeft: 10,
+    marginRight: 30,
+    height: 25,
+    width: 25,
+  },
+  txtDate: {
+    color: colors.grey1,
+  },
 });
