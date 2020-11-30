@@ -4,7 +4,8 @@ import Header from '../../../components/moleculs/Header';
 import {colors} from '../../../utils';
 import {TabView, SceneMap} from 'react-native-tab-view';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import UserOrderList from './orderList';
+import UserOrderListPending from './orderListPending';
+import UserOrderListRequest from './orderListRequest';
 import UserOrderArchive from './orderArchive';
 
 const Tab = createMaterialTopTabNavigator();
@@ -20,7 +21,8 @@ const index = ({navigation}) => {
         onPressAdd={() => navigation.navigate('UserOrderAdd')}
       />
       <Tab.Navigator>
-        <Tab.Screen name="Request" component={UserOrderList} />
+        <Tab.Screen name="Pending" component={UserOrderListPending} />
+        <Tab.Screen name="Request" component={UserOrderListRequest} />
         <Tab.Screen name="Archive" component={UserOrderArchive} />
       </Tab.Navigator>
     </View>

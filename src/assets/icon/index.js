@@ -7,6 +7,7 @@ import Ic_delete from './ic_delete.png';
 import Ic_car from './ic_car.png';
 import Ic_calender from './ic_calender.png';
 import Ic_time from './ic_time.png';
+import Ic_pin from './ic_pin.png';
 
 export {
   Ic_logo,
@@ -18,4 +19,5 @@ export {
   Ic_car,
   Ic_calender,
   Ic_time,
+  Ic_pin,
 };

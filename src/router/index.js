@@ -6,9 +6,10 @@ import {
   Splash,
   UserHome,
   UserOrder,
-  UserOrderList,
+  UserOrderListPending,
   UserOrderArchive,
   UserOrderAdd,
+  UserOrderSetLocation,
 } from '../pages';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -39,8 +40,8 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="UserOrderList"
-        component={UserOrderList}
+        name="UserOrderListPending"
+        component={UserOrderListPending}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -51,6 +52,11 @@ const Router = () => {
       <Stack.Screen
         name="UserOrderAdd"
         component={UserOrderAdd}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UserOrderSetLocation"
+        component={UserOrderSetLocation}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

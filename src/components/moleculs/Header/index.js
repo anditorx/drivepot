@@ -9,7 +9,26 @@ import {
   Ic_delete,
 } from '../../../assets';
 
-const Header = ({onPress, title, type, onPressAdd, onPressDelete, noElevation}) => {
+const Header = ({
+  onPress,
+  title,
+  type,
+  onPressAdd,
+  onPressDelete,
+  noElevation,
+  transparent,
+}) => {
+  if (type === 'transparent') {
+    return (
+      <View style={styles.containerTransparent}>
+        <TouchableOpacity onPress={onPress}>
+          <Ic_arrowBack />
+        </TouchableOpacity>
+        <Text style={styles.title}>{title}</Text>
+      </View>
+    );
+  }
+
   if (type === 'btn-back') {
     return (
       <View style={styles.container(noElevation)}>
@@ -51,6 +70,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     elevation: noElevation ? 0 : 1,
   }),
+  containerTransparent: {
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   title: {
     flex: 1,
     textAlign: 'center',
