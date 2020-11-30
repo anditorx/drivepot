@@ -10,6 +10,8 @@ import {
   UserOrderArchive,
   UserOrderAdd,
   UserOrderSetLocation,
+  SpvHome,
+  DriverHome,
 } from '../pages';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -57,6 +59,16 @@ const Router = () => {
       <Stack.Screen
         name="UserOrderSetLocation"
         component={UserOrderSetLocation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SpvHome"
+        component={SpvHome}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DriverHome"
+        component={DriverHome}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

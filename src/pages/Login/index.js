@@ -8,7 +8,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {ImgBgLogin} from '../../assets';
-import {colors} from '../../utils';
+import {colors, useForm} from '../../utils';
 import Animated from 'react-native-reanimated';
 import BottomSheet from 'reanimated-bottom-sheet';
 import {Button, Gap, Input} from '../../components/atoms';
@@ -17,17 +17,48 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const Login = ({navigation}) => {
+  const [form, setForm] = useForm({
+    email: '',
+    password: '',
+  });
+
+  const onPressLogin = async () => {
+    switch (form.email) {
+      case 'User':
+        navigation.replace('UserHome');
+        break;
+      case 'Spv':
+        navigation.replace('SpvHome');
+        break;
+      case 'Driver':
+        navigation.replace('DriverHome');
+        break;
+      default:
+        break;
+    }
+  };
+
   const renderContent = () => (
     <View style={styles.wrapperRenderContent}>
       <View style={styles.separatorSwipe}></View>
       <Gap height={8} />
       <Text style={styles.titleFormLogin}>Login with your account</Text>
       <Gap height={30} />
-      <Input label="Email" placeholder="Enter your email" />
+      <Input
+        label="Email"
+        placeholder="Enter your email"
+        value={form.email}
+        onChangeText={(value) => setForm('email', value)}
+      />
       <Gap height={10} />
-      <Input label="Password" placeholder="Enter your password" />
+      <Input
+        label="Password"
+        placeholder="Enter your password"
+        value={form.password}
+        onChangeText={(value) => setForm('password', value)}
+      />
       <Gap height={35} />
-      <Button title="Login" onPress={() => navigation.replace('UserHome')} />
+      <Button title="Login" onPress={onPressLogin} />
     </View>
   );
 

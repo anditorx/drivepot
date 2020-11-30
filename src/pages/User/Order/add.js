@@ -133,54 +133,9 @@ const add = ({navigation}) => {
         type="transparent"
         onPress={() => navigation.navigate('UserOrder')}
       />
-      {/* <View style={styles.content}>
-        <View>
-          <Input label="Title" placeholder="Enter your title" />
-          <Gap height={10} />
-          <Input
-            label="Select Date"
-            type={'date-picker'}
-            text={date2}
-            icon={Ic_calender}
-            onPress={showDatepicker}
-          />
-          {show && (
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={date}
-              mode={mode}
-              is24Hour={true}
-              display="default"
-              onChange={onChange}
-            />
-          )}
-          <Gap height={10} />
-          <Input
-            label="Select Time"
-            type={'date-picker'}
-            text={time2}
-            icon={Ic_time}
-            onPress={showTimepicker}
-          />
-          {show && (
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={date}
-              mode={mode}
-              is24Hour={true}
-              display="default"
-              onChange={onChange}
-            />
-          )}
-          <Gap height={10} />
-        </View>
-        <View>
-          <Button title="Set Location" />
-        </View>
-      </View> */}
       <BottomSheet
         ref={sheetRef}
-        snapPoints={[200, 550, 600]}
+        snapPoints={[250, 580]}
         borderRadius={20}
         renderContent={renderContent}
       />
