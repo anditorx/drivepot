@@ -3,10 +3,10 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Ic_arrowRightGrey, Ic_car} from '../../../assets';
 import {Gap, Separator} from '../../atoms';
 
-const index = ({title, date}) => {
+const index = ({title, date, onPress}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.wrapper}>
+      <TouchableOpacity style={styles.wrapper} onPress={onPress}>
         <Image source={Ic_car} style={styles.img} />
         <View style={styles.listText}>
           <Text style={styles.txtTitle}>{title}</Text>

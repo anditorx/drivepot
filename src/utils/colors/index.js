@@ -10,6 +10,7 @@ const mainColors = {
   greyDark: '#858587',
   greyLight: '#dfe4ea',
   blue: '#0599ED',
+  lightBlue: '#98C8DB',
   indigo: '#0c2461',
   skyblue: '#ACCEFF',
 };
@@ -26,7 +27,9 @@ export const colors = {
   greyDark: mainColors.greyDark,
   greyLight: mainColors.greyLight,
   blue: mainColors.blue,
+  indigo: mainColors.indigo,
   skyblue: mainColors.skyblue,
+  lightBlue: mainColors.lightBlue,
   blackLowOppacity: mainColors.blackLowOppacity,
   text: {
     default: mainColors.black,

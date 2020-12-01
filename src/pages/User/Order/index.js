@@ -18,7 +18,7 @@ const index = ({navigation}) => {
         type="add"
         noElevation
         onPress={() => navigation.navigate('UserHome')}
-        onPressAdd={() => navigation.navigate('UserOrderAdd')}
+        onPressAdd={() => navigation.goBack()}
       />
       <Tab.Navigator>
         <Tab.Screen name="Pending" component={UserOrderListPending} />

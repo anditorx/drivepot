@@ -8,6 +8,9 @@ import Ic_car from './ic_car.png';
 import Ic_calender from './ic_calender.png';
 import Ic_time from './ic_time.png';
 import Ic_pin from './ic_pin.png';
+import Ic_carSvg from './ic_car.svg';
+import Ic_request from './ic_request.svg';
+import Ic_userList from './ic_userList.svg';
 
 export {
   Ic_logo,
@@ -20,4 +23,7 @@ export {
   Ic_calender,
   Ic_time,
   Ic_pin,
+  Ic_carSvg,
+  Ic_request,
+  Ic_userList,
 };
