@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import {Ic_calender, Ic_time} from '../../../assets';
 import {Button, Gap, Header, Input, List} from '../../../components';
-import {colors} from '../../../utils';
+import {colors, useForm} from '../../../utils';
 
 const RequestsDetail = ({navigation}) => {
   // date picker
@@ -14,6 +14,33 @@ const RequestsDetail = ({navigation}) => {
   const [show, setShow] = useState(false);
   const [showLocation, setShowLocation] = useState(false);
   const [location, setLocation] = useState('');
+
+  const [itemDriver] = useState([
+    {
+      id: 1,
+      label: '-- Please Select Driver --',
+      value: '',
+    },
+    {
+      id: 2,
+      label: 'Entis',
+      value: 'Entis',
+    },
+    {
+      id: 3,
+      label: 'Dayat',
+      value: 'Dayat',
+    },
+    {
+      id: 4,
+      label: 'Endang',
+      value: 'Endang',
+    },
+  ]);
+
+  const [form, setForm] = useForm({
+    driver: '',
+  });
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -62,8 +89,8 @@ const RequestsDetail = ({navigation}) => {
         type="btn-back"
         onPress={() => navigation.goBack()}
       />
-      <View style={styles.content}>
-        <Input label="Title" value="Tamara Putri" disable />
+      <ScrollView style={styles.content}>
+        <Input label="User Request" value="Tamara Putri" disable />
         <Gap height={10} />
         <Input
           label="From"
@@ -90,12 +117,21 @@ const RequestsDetail = ({navigation}) => {
           onPress={showTimepicker}
           disable
         />
+        <Gap height={10} />
+        <Input
+          label="Driver"
+          value={form.driver}
+          onValueChange={(value) => setForm('driver', value)}
+          select
+          selectItem={itemDriver}
+        />
         <Gap height={20} />
         <Button
-          title="Create Order"
-          onPress={() => navigation.replace('UserOrder')}
+          title="Set Driver"
+          onPress={() => navigation.replace('SpvRequests')}
         />
-      </View>
+        <Gap height={50} />
+      </ScrollView>
     </View>
   );
 };

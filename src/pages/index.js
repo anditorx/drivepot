@@ -9,9 +9,13 @@ import UserOrderSetLocation from './User/Order/setLocation';
 import SpvHome from './Spv/Home';
 import DriverHome from './Driver/Home';
 import SpvCars from './Spv/Cars';
+import SpvCarsAdd from './Spv/Cars/add';
+import SpvCarsDetail from './Spv/Cars/detail';
 import SpvRequests from './Spv/Requests';
 import SpvRequestsDetail from './Spv/Requests/requestDetail';
 import SpvUsers from './Spv/Users';
+import SpvUsersAdd from './Spv/Users/add';
+import SpvUsersDetail from './Spv/Users/detail';
 
 export {
   Splash,
@@ -28,4 +32,8 @@ export {
   SpvRequests,
   SpvUsers,
   SpvRequestsDetail,
+  SpvCarsAdd,
+  SpvCarsDetail,
+  SpvUsersAdd,
+  SpvUsersDetail,
 };

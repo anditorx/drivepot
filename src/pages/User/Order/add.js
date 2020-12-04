@@ -72,7 +72,7 @@ const add = ({navigation}) => {
   const renderContent = () => (
     <View style={styles.wrapperRenderContent}>
       <View style={styles.separatorSwipe}></View>
-      <Gap height={8} />
+      <Gap height={4} />
       <Text style={styles.titleFormLogin}>Create Order</Text>
       <Gap height={10} />
       <Input label="From" placeholder="Search for your address pickup" />
@@ -129,13 +129,10 @@ const add = ({navigation}) => {
 
   return (
     <ImageBackground style={styles.page} source={ImgMapSample}>
-      <Header
-        type="transparent"
-        onPress={() => navigation.navigate('UserOrder')}
-      />
+      <Header type="transparent" onPress={() => navigation.goBack()} />
       <BottomSheet
         ref={sheetRef}
-        snapPoints={[250, 580]}
+        snapPoints={[250, 550]}
         borderRadius={20}
         renderContent={renderContent}
       />
@@ -164,11 +161,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    height: 600,
+    height: 550,
   },
   separatorSwipe: {
-    height: 3,
-    width: '40%',
+    height: 5,
+    width: '30%',
     backgroundColor: colors.primary,
     alignSelf: 'center',
     borderRadius: 20,

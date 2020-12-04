@@ -16,6 +16,10 @@ import {
   SpvRequests,
   SpvUsers,
   SpvRequestsDetail,
+  SpvCarsAdd,
+  SpvCarsDetail,
+  SpvUsersAdd,
+  SpvUsersDetail,
 } from '../pages';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -93,6 +97,26 @@ const Router = () => {
       <Stack.Screen
         name="SpvRequestsDetail"
         component={SpvRequestsDetail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SpvCarsAdd"
+        component={SpvCarsAdd}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SpvCarsDetail"
+        component={SpvCarsDetail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SpvUsersAdd"
+        component={SpvUsersAdd}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SpvUsersDetail"
+        component={SpvUsersDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

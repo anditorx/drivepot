@@ -8,6 +8,7 @@ import {
   Image,
 } from 'react-native';
 import {colors} from '../../../utils/colors';
+import {Picker, Item} from '@react-native-community/picker';
 
 const Input = ({
   label,
@@ -64,6 +65,27 @@ const Input = ({
           editable={!disable}
           selectTextOnFocus={!disable}
         />
+      </View>
+    );
+  }
+
+  if (select) {
+    return (
+      <View>
+        <Text style={styles.labelSelect}>{label}</Text>
+        <View style={styles.picker}>
+          <Picker selectedValue={value} onValueChange={onValueChange}>
+            {selectItem.map((item) => {
+              return (
+                <Picker.Item
+                  key={item.id}
+                  label={item.label}
+                  value={item.value}
+                />
+              );
+            })}
+          </Picker>
+        </View>
       </View>
     );
   }
@@ -128,5 +150,11 @@ const styles = StyleSheet.create({
   },
   txtDate: {
     color: colors.grey1,
+  },
+  picker: {
+    borderWidth: 1,
+    borderColor: colors.greyLight,
+    borderRadius: 10,
+    paddingHorizontal: 4,
   },
 });

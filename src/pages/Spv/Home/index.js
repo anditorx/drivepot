@@ -7,6 +7,7 @@ import {
   Dimensions,
   ImageBackground,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {
   ImgBgHomeSpv,
@@ -33,20 +34,20 @@ const SpvHome = ({navigation}) => {
       <Gap height={30} />
       <Box
         img={ImgRequest}
-        txtBox="REQUEST's"
+        txtBox="REQUEST'S"
         onPress={() => navigation.navigate('SpvRequests')}
       />
       <Gap height={20} />
       <Box
-        img={ImgCar}
-        txtBox="CAR's"
-        onPress={() => navigation.navigate('SpvCars')}
+        img={ImgUserList}
+        txtBox="USER'S"
+        onPress={() => navigation.navigate('SpvUsers')}
       />
       <Gap height={20} />
       <Box
-        img={ImgUserList}
-        txtBox="USER's & DRIVER's"
-        onPress={() => navigation.navigate('SpvUsers')}
+        img={ImgCar}
+        txtBox="CAR'S"
+        onPress={() => navigation.navigate('SpvCars')}
       />
     </View>
   );
@@ -54,7 +55,7 @@ const SpvHome = ({navigation}) => {
   const sheetRef = React.useRef(null);
 
   return (
-    <View style={styles.page}>
+    <ImageBackground source={ImgBgHomeSpv} style={styles.page}>
       <View style={styles.container}>
         <View>
           <View style={styles.header}>
@@ -64,12 +65,9 @@ const SpvHome = ({navigation}) => {
                 Welcome to Drivepot App
               </Text>
             </View>
-            <View>
+            <TouchableOpacity>
               <Image source={ImgAvatarSample} style={styles.imgAvatar} />
-            </View>
-          </View>
-          <View>
-            <Image source={ImgBgHomeSpv} style={styles.imgBgHomeSpv} />
+            </TouchableOpacity>
           </View>
         </View>
         <BottomSheet
@@ -79,7 +77,7 @@ const SpvHome = ({navigation}) => {
           renderContent={renderContent}
         />
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
