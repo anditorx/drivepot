@@ -16,6 +16,9 @@ import SpvRequestsDetail from './Spv/Requests/requestDetail';
 import SpvUsers from './Spv/Users';
 import SpvUsersAdd from './Spv/Users/add';
 import SpvUsersDetail from './Spv/Users/detail';
+import WaitForPickup from './Spv/WaitForPickup';
+import OnTheRoad from './Spv/OnTheRoad';
+import TrackLocation from './Spv/OnTheRoad/trackLocation';
 
 export {
   Splash,
@@ -36,4 +39,7 @@ export {
   SpvCarsDetail,
   SpvUsersAdd,
   SpvUsersDetail,
+  WaitForPickup,
+  OnTheRoad,
+  TrackLocation,
 };

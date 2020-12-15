@@ -17,7 +17,9 @@ import {
   Ic_request,
   ImgUserList,
   ImgRequest,
+  ImgReqNotPickup,
   ImgCar,
+  ImgCarRide,
 } from '../../../assets';
 import {colors} from '../../../utils';
 import Animated from 'react-native-reanimated';
@@ -32,6 +34,70 @@ const SpvHome = ({navigation}) => {
     <View style={styles.wrapperRenderContent}>
       <View style={styles.separatorSwipe}></View>
       <Gap height={30} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('WaitForPickup')}
+          style={{
+            height: 150,
+            width: 150,
+            backgroundColor: colors.lightBlue,
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingHorizontal: 20,
+            paddingVertical: 20,
+            borderRadius: 10,
+          }}>
+          <Image
+            source={ImgReqNotPickup}
+            style={{height: 70, width: 70, resizeMode: 'contain'}}
+          />
+          <View style={styles.wrapTxt}>
+            <Text
+              style={{
+                color: colors.white,
+                fontSize: 17,
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }}>
+              WAIT FOR PICKUP
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <Gap width={20} />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('OnTheRoad')}
+          style={{
+            height: 150,
+            width: 150,
+            backgroundColor: colors.lightBlue,
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingHorizontal: 20,
+            paddingVertical: 20,
+            borderRadius: 10,
+          }}>
+          <Image
+            source={ImgCarRide}
+            style={{height: 70, width: 70, resizeMode: 'contain'}}
+          />
+          <View style={styles.wrapTxt}>
+            <Text
+              style={{
+                color: colors.white,
+                fontSize: 17,
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }}>
+              ON THE ROAD
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <Gap height={20} />
       <Box
         img={ImgRequest}
         txtBox="REQUEST'S"
@@ -118,7 +184,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    height: 470,
+    height: 650,
   },
   separatorSwipe: {
     height: 5,
@@ -141,4 +207,5 @@ const styles = StyleSheet.create({
   },
   wrapTxt: {justifyContent: 'center'},
   titleBox: {fontSize: 22, color: colors.white, fontWeight: 'bold'},
+  wrapTxt: {justifyContent: 'center'},
 });

@@ -17,6 +17,8 @@ import ImgSampleDriver02 from './sample_driver02.png';
 import ImgSampleDriver03 from './sample_driver03.png';
 import ImgSampleDriver04 from './sample_driver04.png';
 import ImgSampleDriver05 from './sample_driver05.png';
+import ImgReqNotPickup from './img_reqnotpicup.png';
+import ImgCarRide from './img_carRide.png';
 
 export {
   ImgBgLogin,
@@ -38,4 +40,6 @@ export {
   ImgSampleDriver03,
   ImgSampleDriver04,
   ImgSampleDriver05,
+  ImgReqNotPickup,
+  ImgCarRide,
 };

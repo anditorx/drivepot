@@ -20,6 +20,9 @@ import {
   SpvCarsDetail,
   SpvUsersAdd,
   SpvUsersDetail,
+  WaitForPickup,
+  OnTheRoad,
+  TrackLocation,
 } from '../pages';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -117,6 +120,21 @@ const Router = () => {
       <Stack.Screen
         name="SpvUsersDetail"
         component={SpvUsersDetail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="WaitForPickup"
+        component={WaitForPickup}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="OnTheRoad"
+        component={OnTheRoad}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TrackLocation"
+        component={TrackLocation}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
